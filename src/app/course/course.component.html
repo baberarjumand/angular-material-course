@@ -1,9 +1,17 @@
 <div class="course">
+  <h2>{{ course?.description }}</h2>
 
-    <h2>{{course?.description}}</h2>
+  <img class="course-thumbnail" [src]="course?.iconUrl" />
 
-    <img class="course-thumbnail" [src]="course?.iconUrl">
-
+  <mat-table class="lessons-table mat-elevation-z8">
+    <ng-container matColumnDef="seqNo">
+      <!-- <div *matHeaderCellDef></div> -->
+      <!-- <div *matCellDef></div> -->
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <div *matHeaderCellDef>Description</div>
+      <div *matCellDef></div>
+    </ng-container>
+    <ng-container matColumnDef="duration"> </ng-container>
+  </mat-table>
 </div>
-
-

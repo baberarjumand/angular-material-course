@@ -18,6 +18,7 @@ import {
   timeout,
 } from 'rxjs/operators';
 import { merge, fromEvent } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: "course",
@@ -26,6 +27,10 @@ import { merge, fromEvent } from 'rxjs';
 })
 export class CourseComponent implements OnInit, AfterViewInit {
   course: Course;
+
+  dataSource = new MatTableDataSource([]);
+
+  displayColumns = ['seqNo', 'description', 'duration'];
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +42,9 @@ export class CourseComponent implements OnInit, AfterViewInit {
 
     this.coursesService
       .findAllCourseLessons(this.course.id)
-      .subscribe((lessons) => {});
+      .subscribe((lessons) => {
+        this.dataSource.data = lessons;
+      });
   }
 
   ngAfterViewInit() {}

@@ -3,6 +3,16 @@
 
   <img class="course-thumbnail" [src]="course?.iconUrl" />
 
+  <!-- <mat-input-container></mat-input-container> -->
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Search lessons"
+      #searchInput
+      (keyup)="this.searchLessons(searchInput.value)"
+    />
+  </mat-form-field>
+
   <mat-table
     class="lessons-table mat-elevation-z8"
     [dataSource]="this.dataSource"

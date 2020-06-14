@@ -48,4 +48,8 @@ export class CourseComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {}
+
+  searchLessons(searchStr = '') {
+    this.dataSource.filter = searchStr.toLowerCase().trim();
+  }
 }

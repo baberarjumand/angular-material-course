@@ -49,6 +49,8 @@ export class CourseComponent implements OnInit, AfterViewInit {
     //   });
 
     this.dataSource = new LessonsDataSource(this.coursesService);
+
+    this.dataSource.loadLessons(this.course.id, '', 'asc', 0, 3);
   }
 
   ngAfterViewInit() {}

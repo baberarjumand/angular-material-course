@@ -3,7 +3,7 @@ import { Course } from '../model/course';
 import { COURSES } from '../model/db-data';
 
 @Component({
-  selector: "home",
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })

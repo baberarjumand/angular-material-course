@@ -19,6 +19,7 @@ import {
 } from 'rxjs/operators';
 import { merge, fromEvent } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
+import { LessonsDataSource } from '../services/lessons.datasource';
 
 @Component({
   selector: "course",
@@ -28,7 +29,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class CourseComponent implements OnInit, AfterViewInit {
   course: Course;
 
-  dataSource = new MatTableDataSource([]);
+  //   dataSource = new MatTableDataSource([]);
+  dataSource: LessonsDataSource;
 
   displayColumns = ['seqNo', 'description', 'duration'];
 
@@ -40,16 +42,18 @@ export class CourseComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.course = this.route.snapshot.data['course'];
 
-    this.coursesService
-      .findAllCourseLessons(this.course.id)
-      .subscribe((lessons) => {
-        this.dataSource.data = lessons;
-      });
+    // this.coursesService
+    //   .findAllCourseLessons(this.course.id)
+    //   .subscribe((lessons) => {
+    //     this.dataSource.data = lessons;
+    //   });
+
+    this.dataSource = new LessonsDataSource(this.coursesService);
   }
 
   ngAfterViewInit() {}
 
-  searchLessons(searchStr = '') {
-    this.dataSource.filter = searchStr.toLowerCase().trim();
-  }
+  //   searchLessons(searchStr = "") {
+  //     this.dataSource.filter = searchStr.toLowerCase().trim();
+  //   }
 }

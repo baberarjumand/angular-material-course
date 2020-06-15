@@ -14,7 +14,8 @@
 @include mat-core();
 
 // Define a theme
-$primary: mat-palette($mat-indigo);
+// $primary: mat-palette($mat-indigo);
+$primary: mat-palette($mat-red);
 $accent: mat-palette($mat-pink, A200, A100, A400);
 
 $theme: mat-light-theme($primary, $accent);

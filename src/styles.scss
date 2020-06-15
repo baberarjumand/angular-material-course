@@ -14,11 +14,12 @@
 @include mat-core();
 
 // Define a theme
-// $primary: mat-palette($mat-indigo);
-$primary: mat-palette($mat-red);
+$primary: mat-palette($mat-indigo);
+// $primary: mat-palette($mat-red);
 $accent: mat-palette($mat-pink, A200, A100, A400);
 
-$theme: mat-light-theme($primary, $accent);
+// $theme: mat-light-theme($primary, $accent);
+$theme: mat-dark-theme($primary, $accent);
 
 // Include all theme styles for all components
 @include angular-material-theme($theme);

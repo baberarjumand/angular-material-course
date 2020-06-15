@@ -25,7 +25,8 @@ export class CoursesCardListComponent implements OnInit {
       longDescription,
       category,
     };
+    dialogConfig.autoFocus = true;
 
-    this.dialog.open(CourseDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
   }
 }

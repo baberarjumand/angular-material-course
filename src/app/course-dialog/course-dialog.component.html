@@ -1,3 +1,17 @@
 <h2 mat-dialog-title>{{ this.description }}</h2>
 
-<p>Dialog Body</p>
+<mat-dialog-content [formGroup]="this.form">
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="description"
+      placeholder="Course Description"
+    />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="this.close()">
+    Close
+  </button>
+</mat-dialog-actions>
